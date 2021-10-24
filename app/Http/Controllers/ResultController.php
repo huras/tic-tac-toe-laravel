@@ -8,7 +8,8 @@ use Illuminate\Http\Request;
 class ResultController extends Controller
 {
     public function index(){
-        return view('results.index');
+        $results = Result::all();
+        return view('results.index', compact('results'));
     }
 
     public function store(Request $request){

@@ -67,17 +67,22 @@ function initializePosition() {
     var positions = document.getElementsByClassName("position");
 
     for (var i = 0; i < positions.length; i++) {
+        const position = positions[i];
         positions[i].setAttribute('movement', '');
         positions[i].innerHTML = '';
         positions[i].addEventListener("click", function () {
             if (gameOver) { return; }
+
+            moves.push({
+                location: position.id,
+                player: playTime
+            })
 
             if (this.getElementsByTagName("img").length == 0) {
                 if (playTime == player1) {
                     this.innerHTML = "<img src='images/x.png'>";
                     this.setAttribute("movement", player1Name);
                     playTime = player2;
-
                 } else {
                     this.innerHTML = "<img src='images/o.png'>";
                     this.setAttribute("movement", player2Name);

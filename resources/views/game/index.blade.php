@@ -58,6 +58,8 @@
                         <button class="btn btn-success " onclick="softReset()">Restart</button>
                         <button class="btn btn-primary mt-1" onclick="hardReset()">Change names</button>
                     </div>
+
+                    <button class="btn btn-danger mt-5 cancel-game" onclick="if(confirm('Do you really want to cancel this game?')) hardReset()">Cancel game</button>
                 </div>
             </div>
         </div>
@@ -66,7 +68,7 @@
     <script>
         function storeResultInDataBase(result){
             const token = document.querySelector('meta[name=csrf-token').getAttribute('content');
-            fetch("{{route('store.result')}}",
+            fetch("{{route('store.results')}}",
                 {
                     headers: {
                         "Content-Type": "application/json",

@@ -16,4 +16,5 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [GameController::class, 'GameScreen']);
-Route::post('/results', [ResultController::class, 'store'])->name('store.result');
+Route::get('/results', [ResultController::class, 'index'])->name('index.results');
+Route::post('/results', [ResultController::class, 'store'])->name('store.results');
