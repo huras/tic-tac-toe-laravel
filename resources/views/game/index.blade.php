@@ -105,9 +105,15 @@
         </div>
     </div>
 
+    <div class='saving-screen hidden' id='saving-screen'>
+        Saving...
+    </div>
+
     <script>
         function storeResultInDataBase(result){
             const token = document.querySelector('meta[name=csrf-token').getAttribute('content');
+            const savingScreen = document.getElementById('saving-screen')
+            savingScreen.classList.remove('hidden')
             fetch("{{route('store.results')}}",
                 {
                     headers: {
@@ -122,7 +128,8 @@
                 }
             ).then(response => response.json())
             .then(data => {
-                console.log(data)
+                // console.log(data)
+                savingScreen.classList.add('hidden')
                 buildTable(data.last5)
             })
         }
