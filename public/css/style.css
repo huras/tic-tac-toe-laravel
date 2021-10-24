@@ -1,0 +1,75 @@
+#header {
+    margin: auto;
+    margin-top: 40px;
+    margin-bottom: 30px;
+    width: 252px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.in-game-holder.gameover #header{
+    visibility: hidden;
+}
+#header p {
+    /* margin-right: 10px; */
+    text-align: center;
+    margin: 0;
+}
+#header img {
+    margin-left: 1rem;
+}
+.position {
+    /* width: 80px; */
+    min-height: 80px;
+    border: 2px solid #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* float: left;
+    padding-top: 20px;  */
+}
+.board {
+    /* width: 100%;
+    min-height: 252px;
+    margin:auto; */
+    width: 100%;
+}
+.board-row{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.in-game {
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.in-game-holder{
+    display: flex;
+    flex-direction: column;
+}
+
+.in-game-holder.gameover .position{
+    background-color: #10ff00;
+}
+
+.winner-card{
+    display: none;
+}
+.in-game-holder.gameover .winner-card{
+    display: flex;
+}
+
+
+@media(max-width: 768px){
+    .desktop-only{
+        display: none!important;
+    }
+}
+@media(min-width: 769px){
+    .mobile-only{
+        display: none!important;
+    }
+}
