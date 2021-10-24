@@ -7,7 +7,6 @@
                 <div class='pre-game  m-auto' >
                     <div class="card" style="width: 100%; border: 0;">
                         <div class="card-body">
-                          <h5 class="card-title">Tic Tac Toe Laravel</h5>
                           <p class="card-text">Fill the fields below with the player's names and press <span class='text-success'>start</span> to play!</p>
                         </div>
                         <div class="mb-3 row">

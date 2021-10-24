@@ -28,6 +28,13 @@
     /* float: left;
     padding-top: 20px;  */
 }
+@media(max-width: 768px){
+    .position{
+        min-width: 30vw;
+        min-height: 30vw;
+    }
+}
+
 .board {
     /* width: 100%;
     min-height: 252px;
@@ -44,6 +51,11 @@
     justify-content: center;
     display: flex;
     flex-direction: column;
+}
+@media(max-width: 768px){
+    .in-game {
+        margin: unset!important;
+    }
 }
 
 .in-game-holder{
