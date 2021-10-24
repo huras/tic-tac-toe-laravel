@@ -4,7 +4,7 @@ const startGame = () => {
 
     if(player1Name && player2Name){
         document.getElementById('pre-game').style.display = 'none';
-        document.getElementById('in-game').style.display = 'flex';
+        document.getElementById('in-game-holder').style.display = 'flex';
         softReset();
         var playTime = (playTime == player2 || playTime == undefined) ? player1 : player2;
     } else {
@@ -21,7 +21,7 @@ const softReset = () => {
 
 const hardReset = () => {
     document.getElementById('pre-game').style.display = 'flex';
-    document.getElementById('in-game').style.display = 'none';
+    document.getElementById('in-game-holder').style.display = 'none';
     softReset();
 }
 
@@ -137,7 +137,6 @@ function hasWinner() {
         document.getElementById('winner-name').innerHTML = winnerName;
 
         storeResultInDataBase({
-            moves: JSON.stringify(moves),
             winner_name: winnerName
         });
 

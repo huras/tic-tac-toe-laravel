@@ -15,7 +15,7 @@ class CreateResultsTable extends Migration
     {
         Schema::create('results', function (Blueprint $table) {
             $table->id();
-            $table->json('moves');
+            // $table->json('moves');
             $table->string('winner_name');
             $table->timestamps();
         });

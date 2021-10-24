@@ -14,6 +14,7 @@ class ResultController extends Controller
 
     public function store(Request $request){
         $result = Result::create($request->all());
-        return response()->json(['result' => $result]);
+        $last5 = Result::latest()->take(5)->get();
+        return response()->json(['result' => $result, 'last5' => $last5]);
     }
 }
