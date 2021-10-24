@@ -25,12 +25,6 @@ const hardReset = () => {
     softReset();
 }
 
-const showNotification = (message = '') => {
-    var myToastEl = document.getElementById('myToastEl')
-    var myToast = bootstrap.Toast.getInstance(myToastEl);
-    myToast.show();
-}
-
 
 // =============================================================================
 var player1Name = "";
@@ -41,9 +35,6 @@ const player2 = "o";
 var playTime = undefined;
 var gameOver = false;
 var moves = [];
-
-// updateHeader();
-// initializePosition();
 
 function updateHeader() {
 
@@ -118,7 +109,7 @@ function hasWinner() {
         [b1, b2, b3],
         [c1, c2, c3],
     ]
-    var matrix = board.map(column => {
+    var boardMatrix = board.map(column => {
         return column.map(space => {
             if(space === player1Name)
                 return -1
@@ -129,7 +120,7 @@ function hasWinner() {
         })
     });
 
-    var winner = checkWinnerMatrix(matrix);
+    var winner = checkWinnerMatrix(boardMatrix);
     if(winner != ""){
         const winnerName = winner < 0 ? player1Name : player2Name
         gameOver = true;
@@ -147,6 +138,7 @@ function hasWinner() {
 }
 
 function checkWinnerMatrix(matrix){
+    // Codigo obtido em: https://stackoverflow.com/questions/16571035/javascript-tictactoe-if-winner-detection
     const arr = matrix;
 
     for(var i = 0; i<3;i++){
