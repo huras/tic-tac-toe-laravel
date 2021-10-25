@@ -12,13 +12,13 @@
                         <div class="mb-3 row">
                             <label for="p1-name" class="col-sm-2 col-form-label">Player 1's name:</label>
                             <div class="col-sm-10">
-                              <input type="text" class="form-control" name='player1' id="p1-name" value='juca'>
+                              <input type="text" class="form-control" name='player1' id="p1-name" value='Ben'>
                             </div>
                         </div>
                         <div class="mb-3 row">
                             <label for="p2-name" class="col-sm-2 col-form-label">Player 2's name:</label>
                             <div class="col-sm-10">
-                              <input type="text" class="form-control" name='player2' id="p2-name" value='pedro'>
+                              <input type="text" class="form-control" name='player2' id="p2-name" value='Daniel'>
                             </div>
                         </div>
                         <button class="btn btn-success" onclick="startGame()">Start</button>
@@ -55,6 +55,13 @@
                     <div class="card winner-card"  style="width: 100%; border: 0;">
                         <div class="card-body">
                           <h5 class="card-title" style='text-align: center;'><strong id='winner-name'>Luana</strong> is the winner!</h5>
+                        </div>
+                        <button class="btn btn-success " onclick="softReset()">Restart</button>
+                        <button class="btn btn-primary mt-1" onclick="hardReset()">Change names</button>
+                    </div>
+                    <div class="card tie-card"  style="width: 100%; border: 0;">
+                        <div class="card-body">
+                          <h5 class="card-title" style='text-align: center;'>Tie! Restart the game.</h5>
                         </div>
                         <button class="btn btn-success " onclick="softReset()">Restart</button>
                         <button class="btn btn-primary mt-1" onclick="hardReset()">Change names</button>
@@ -128,7 +135,6 @@
                 }
             ).then(response => response.json())
             .then(data => {
-                // console.log(data)
                 savingScreen.classList.add('hidden')
                 buildTable(data.last5)
             })

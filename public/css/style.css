@@ -10,8 +10,10 @@
 .in-game-holder.gameover #header{
     visibility: hidden;
 }
+.in-game-holder.tie #header{
+    visibility: hidden;
+}
 #header p {
-    /* margin-right: 10px; */
     text-align: center;
     margin: 0;
 }
@@ -19,14 +21,12 @@
     margin-left: 1rem;
 }
 .position {
-    /* width: 80px; */
     min-height: 80px;
     border: 2px solid #000;
     display: flex;
     align-items: center;
     justify-content: center;
-    /* float: left;
-    padding-top: 20px;  */
+
 }
 @media(max-width: 768px){
     .position{
@@ -36,9 +36,6 @@
 }
 
 .board {
-    /* width: 100%;
-    min-height: 252px;
-    margin:auto; */
     width: 100%;
 }
 .board-row{
@@ -67,13 +64,29 @@
     background-color: #10ff00;
 }
 
-.winner-card{
+.in-game-holder.tie .position{
+    background-color: #ff3c00;
+}
+
+
+.winner-card {
     display: none;
 }
+
+.tie-card{
+    display: none;
+}
+
 .in-game-holder.gameover .winner-card{
     display: flex;
 }
 .in-game-holder.gameover .cancel-game{
+    display: none;
+}
+.in-game-holder.tie .tie-card{
+    display: flex;
+}
+.in-game-holder.tie .cancel-game{
     display: none;
 }
 
